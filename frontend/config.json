@@ -1,0 +1,6 @@
+{
+    "npmName": "lawyer-site",
+    "npmVersion": "1.0.0",
+    "snapshot": false,
+    "withInterfaces": true
+  }

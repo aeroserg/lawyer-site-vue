@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_service_price_card_kartochka_prajs_lista",
+  "info": {
+    "displayName": "карточка конкретной услуги прайс-листа",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "service_title": {
+      "type": "string"
+    },
+    "service_card_inscription": {
+      "type": "text"
+    },
+    "service_card_price": {
+      "type": "string"
+    },
+    "service_card_details": {
+      "type": "blocks"
+    }
+  }
+}

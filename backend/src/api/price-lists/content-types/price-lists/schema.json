@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "price_list",
+  "info": {
+    "singularName": "price-lists",
+    "pluralName": "price-list",
+    "displayName": "Прайс-лист",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price_list_card": {
+      "displayName": "карточка прайс-листа",
+      "type": "component",
+      "repeatable": true,
+      "component": "price-list-card.kartochka-prajs-lista"
+    }
+  }
+}

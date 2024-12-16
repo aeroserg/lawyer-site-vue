@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "about",
+  "info": {
+    "singularName": "abouts",
+    "pluralName": "about",
+    "displayName": "О компании"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "О компании"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "card_title": {
+      "type": "string",
+      "default": "Комплексное юридическое сопровождение бизнеса"
+    },
+    "card_desciption": {
+      "type": "blocks"
+    },
+    "card_photo": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "expertise": {
+      "type": "blocks"
+    }
+  }
+}

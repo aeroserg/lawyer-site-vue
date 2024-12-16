@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_service_card_kartochka_uslugi",
+  "info": {
+    "displayName": "Карточка услуги",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "brief_description": {
+      "type": "text"
+    },
+    "full_description": {
+      "type": "text"
+    },
+    "service_photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

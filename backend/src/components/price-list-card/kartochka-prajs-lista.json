@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_price_list_card_kartochka_prajs_lista",
+  "info": {
+    "displayName": "карточка типа услуги прайс-листа",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "service_type": {
+      "type": "string",
+      "required": true
+    },
+    "service_price_card": {
+      "displayName": "карточка прайс-листа",
+      "type": "component",
+      "repeatable": true,
+      "component": "service-price-card.kartochka-prajs-lista"
+    }
+  }
+}
