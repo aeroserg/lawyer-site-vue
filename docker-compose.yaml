@@ -15,8 +15,7 @@ services:
       - app-network
 
   frontend:
-    build:
-      context: ./frontend
+    image: aeroserg/frontend:latest
     container_name: frontend
     ports:
       - '3000:3000'
@@ -36,7 +35,7 @@ services:
       - '5432:5432'
     networks:
       - app-network
-      
+
 volumes:
   strapi_data:
   postgres_data:
