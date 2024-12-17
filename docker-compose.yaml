@@ -15,10 +15,12 @@ services:
       - app-network
 
   frontend:
-    image: aeroserg/frontend:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     container_name: frontend
     ports:
-      - '3000:3000'
+      - '4173:4173'
     networks:
       - app-network
 
@@ -35,7 +37,7 @@ services:
       - '5432:5432'
     networks:
       - app-network
-
+      
 volumes:
   strapi_data:
   postgres_data:

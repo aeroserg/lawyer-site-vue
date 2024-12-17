@@ -1,19 +1,19 @@
-# Use Node.js as base image
+# Use Node.js base image
 FROM node:20-alpine
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copy package.json and install dependencies
 COPY package*.json ./
-RUN npm ci --legacy-peer-deps 
+RUN npm ci --legacy-peer-deps
 
-# Copy the entire backend project
+# Copy the source code and build the project
 COPY . .
 RUN npm run build
 
-# Expose the application port
-EXPOSE 3000
+# Expose the port for Vite preview
+EXPOSE 4173
 
-# Start Strapi
-CMD ["npm", "run", "preview"]
+# Run Vite preview to serve the 'dist' folder
+CMD ["npx", "vite", "preview", "--host"]
