@@ -16,4 +16,4 @@ RUN npm run build
 EXPOSE 4173
 
 # Run Vite preview to serve the 'dist' folder
-CMD ["npx", "vite", "preview", "--host"]
+CMD ["npm", "run", "preview"]
