@@ -52,7 +52,7 @@
               <!-- Image -->
               <v-img
                 v-if="mainScreen"
-                :src="'http://localhost:1337' + mainScreen.photo"
+                :src="mainScreen.photo"
                 :alt="mainScreen.photoAlt || 'Main Image'"
                 max-width="100%"
                 min-width="280px"
