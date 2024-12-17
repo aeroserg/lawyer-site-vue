@@ -15,9 +15,7 @@ services:
       - app-network
 
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: aeroserg/frontend:latest
     container_name: frontend
     ports:
       - '4173:4173'
