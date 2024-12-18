@@ -6,7 +6,7 @@ BACKEND_IMAGE = $(DOCKER_USER)/backend:latest
 FRONTEND_IMAGE = $(DOCKER_USER)/frontend:latest
 
 # Имя виртуальной машины (можно заменить на IP-адрес или hostname)
-VM_HOST = root@194.58.114.45 
+VM_HOST = root@194.58.114.45
 
 # Путь к файлу Docker Compose на удалённой машине
 REMOTE_COMPOSE_PATH = ./docker-compose.yaml
