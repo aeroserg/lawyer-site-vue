@@ -1,5 +1,5 @@
 # Use Node.js as base image
-FROM node:20
+FROM node:20-alpine3.21
 
 # Set the working directory
 WORKDIR /app
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 1337
 
 # Start Strapi
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "develop"]
