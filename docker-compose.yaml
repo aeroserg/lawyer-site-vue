@@ -13,7 +13,7 @@ services:
       - postgres
     networks:
       - app-network
-# секрет
+# секрет СЕКРЕТ
   frontend:
     image: aeroserg/frontend:latest
     container_name: frontend

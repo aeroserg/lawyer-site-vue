@@ -35,7 +35,7 @@ push-frontend: frontend
 # Деплой на виртуальную машину
 deploy:
 	# Копируем docker-compose.yaml на удалённую машину
-	scp $(REMOTE_COMPOSE_PATH) $(VM_HOST)
+	scp $(REMOTE_COMPOSE_PATH) $(VM_HOST):/root/lawyer-site-vue
 	# Пуллим изменения и образы на удалённой машине
 	ssh $(VM_HOST) "cd ~/lawyer-site-vue && git pull"
 	ssh $(VM_HOST) "cd ~/lawyer-site-vue && docker compose pull && docker compose up --build -d && docker system prune -a"
