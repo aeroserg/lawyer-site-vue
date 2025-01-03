@@ -1,7 +1,8 @@
 {
   "collectionName": "components_case_card_kartochka_kejsa",
   "info": {
-    "displayName": "карточка кейса"
+    "displayName": "карточка кейса",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -14,6 +15,12 @@
     "case_description": {
       "type": "blocks",
       "required": true
+    },
+    "meta_title": {
+      "type": "string"
+    },
+    "meta_description": {
+      "type": "text"
     }
   }
 }

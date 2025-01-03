@@ -36,10 +36,11 @@
           </div>
           <v-img
             v-if="cardPhotoUrl"
+            class="card-image"
             :src="cardPhotoUrl"
             alt="Card Image"
-            
-            :min-width="screenWidth > 997 ? '100%' : (cardWidthfinal - 75) as number"
+            max-width="300px"
+            :min-width="screenWidth > 997 ? '100%' : screenWidth < 550 ? '100%' :'50%'"            
             style="display: block; margin: 0 auto;"
           ></v-img>
         </v-card>
@@ -57,6 +58,7 @@
 import { defineComponent, ref, computed, onMounted, onBeforeUnmount } from "@vue/runtime-core";
 import { fetchData } from "../../utils/api";
 import { renderRichText } from "../../utils/render-rich-text";
+import { environment } from "../../environment/environment";
 
 export default defineComponent({
   name: "AboutSection",
@@ -99,7 +101,7 @@ export default defineComponent({
           cardDescription.value = aboutData.card_desciption || [];
           expertise.value = aboutData.expertise || [];
           cardTitle.value = aboutData.card_title || "";
-          cardPhotoUrl.value = 'http://localhost:1337/' + aboutData.card_photo?.at(0)?.url || "";
+          cardPhotoUrl.value = `${environment.strapiUrl}${aboutData.card_photo?.at(0)?.url}` || "";
           cardWidth.value = aboutData.card_photo.at(0).width || 200;
         }
       } catch (error) {
@@ -165,6 +167,11 @@ export default defineComponent({
   text-decoration-skip-ink: none;
 }
 
+.card-image {
+  margin-top: 1rem!important ;
+  aspect-ratio: 3 / 2;
+}
+
 
 /* Card Description */
 .card-description {
@@ -196,6 +203,15 @@ export default defineComponent({
   #about {
   padding: 30px 0!important;
 }
+.card-image {
+  margin-top: 0!important ;
+  margin-right: 1rem!important;
+}
+.card-image img.v-img__img {
+  object-fit: cover!important ;
+  margin-top: 1rem!important ;
+}
+
   .card-description {
     flex-direction: row-reverse;
   }
@@ -207,6 +223,15 @@ export default defineComponent({
   .card-description {
     flex-direction: column
   }
+  .card-image {
+    margin-top: 0!important ;
+    margin-right: 0!important;
+    margin: 0 auto!important;
+  }
+  .card-image img {
+  object-fit: cover!important ;
+  margin-top: 1rem!important ;
+}
 }
 
 

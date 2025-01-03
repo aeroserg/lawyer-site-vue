@@ -1,7 +1,7 @@
 <template>
   <v-container
     class="responsive-container"
-    style="margin-top: 50px; position: relative; padding-bottom: 10px;"
+    style="margin-top: 50px; position: relative; padding-bottom: 10px; overflow: hidden;"
     max-width="1280px"
     
   >
@@ -14,7 +14,7 @@
         </div>
       </v-col>
 
-      <v-col cols="11">
+      <v-col cols="12" sm="11">
         <v-row justify="center">
           <v-col cols="12" class="stats-container">
             <div class="stats-line">
@@ -35,7 +35,7 @@
               <!-- Title and Description -->
               <div class="text-content">
                 <div
-                  class="rich-text-content b-h1 mb-8"
+                  class="rich-text-content b-h1"
                   v-html="renderRichText(mainScreen.title)"
                 ></div>
                 <div
@@ -70,6 +70,7 @@
 import { defineComponent, computed } from "vue";
 import { fetchData } from "../../utils/api";
 import { renderRichText } from "../../utils/render-rich-text";
+import { environment } from "../../environment/environment";
 
 interface MainScreenData {
   title: object[];
@@ -135,7 +136,7 @@ export default defineComponent({
           title: screenData.title || [],
           stats: screenData.stats || [],
           description: screenData.description || [],
-          photo: screenData.photo?.url || "",
+          photo: `${environment.strapiUrl}${screenData.photo?.url}` || "",
           photoAlt: screenData.photo?.alternativeText || "Main Image",
         };
       }
@@ -157,6 +158,7 @@ h1 {
 h1.strong {
   font-weight: 900;
 }
+
 @media (max-width: 992px) {
   h1 {
     font-size: 50px;
@@ -165,20 +167,60 @@ h1.strong {
 }
 @media screen and (max-width: 550px) {
   h1 {
-    font-size: 30px;
-    line-height: 30px;
+    font-size: 35px;
+    line-height: 35px;
     font-weight: 400;
     display: flex;
     flex-direction: column;
-  }
-
-  h1.strong {
+   
+  }  
+  h1 strong {
     font-weight: 900;
+    font-size: 25px!important;
   }
   h2 {
     font-size: 18px;
     line-height: 24px;
   }
+  .rich-text-content p {
+    font-size: 14px!important;
+    line-height: normal;
+  }
+
+}
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 40px;
+    line-height: 35px;
+  }
+  h1 strong {
+    font-weight: 900;
+    font-size: 25px;
+  }
+  h2 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+   
+  }  
+  h1 strong {
+    font-weight: 900;
+    font-size: 20px!important;
+  }
+  h2 {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 0.5rem;
+  }
+  
 }
 </style>
 
@@ -197,6 +239,9 @@ h1 {
 h1.strong {
   font-weight: 900;
 }
+.b-h1 {
+    margin-bottom: 3rem!important;
+  }
 
 .mb-4 {
   margin-bottom: 1rem;
@@ -282,6 +327,7 @@ h1.strong {
 .content-container {
   display: flex;
   flex-direction: column;
+
 }
 
 .content-flex {
@@ -289,6 +335,7 @@ h1.strong {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
   gap: 20px;
 }
 
@@ -354,42 +401,108 @@ h1.strong {
   .text-content {
     padding: 15px;
   }
-
+  
   .content-image {
-    display: none;
+    max-width: 100%!important;
+    min-width: 250px!important;
+    right: -10px;
+    height: 100%;
+    margin-bottom: 0;
+    margin-right: -10px !important;
   }
-
-
+  .b-h1 {
+    margin-bottom: 0!important;
+  }
   .contact-button {
     padding: 12px;
     font-size: 12px;
+    margin-top: 10px;
   }
   .responsive-container {
-    padding-bottom: 40px!important;
+    padding-bottom: 12px!important;
+  }
+  .line-container {
+    margin-bottom: 15px;
+  }
+  .content-container {
+    padding: 0;
+  }
+  .text-content {
+    padding: 0;
+  }
+  .content-flex {
+    margin-left: 1rem;
+    gap: 0;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px)  {
+  .line-container {
+    display: none;
+  }
+  .responsive-container {
+    padding-bottom: 12px!important;
   }
 }
 @media (max-width: 550px) {
   .content-flex {
-    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
   }
-
+  .text-content {
+    padding: 0;
+  }
+  .content-image {
+    max-width: 100%!important;
+    min-width: 200px!important;
+    right: -20px;
+    height: 100%;
+    margin-bottom: 0;
+    margin-right: -20px !important;
+  }
+  .contact-button {
+    letter-spacing: 0;
+    padding: 8px;
+    font-size: 12px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
   .stat-large {
-    font-size: 22px;
+    font-size: 36px;
   }
   .stats-line {
-    gap: 10px;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+  .responsive-container {
+    padding-bottom: 12px!important;
   }
   .stat-small {
-    font-size: 12px;
+    font-size: 14px;
   }
+
 }
 @media (max-width: 430px) {
   .content-flex {
-    flex-direction: column;
+    flex-wrap: nowrap;
   }
 
   .stat-large {
-    font-size: 22px;
+    font-size: 26px;
+  }
+
+  .stat-small {
+    font-size: 15px;
+  }
+ 
+}
+@media (max-width: 390px) {
+  .content-flex {
+    flex-wrap: nowrap;
+  }
+
+  .stat-large {
+    font-size: 20px;
   }
 
   .stat-small {

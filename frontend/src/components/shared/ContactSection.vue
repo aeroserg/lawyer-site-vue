@@ -77,6 +77,7 @@
 import { defineComponent } from '@vue/runtime-core';
 import { fetchData } from '../../utils/api';
 import axios from 'axios';
+import { environment } from '../../environment/environment';
 
 export default defineComponent({
   name: 'ContactSection',
@@ -89,7 +90,7 @@ export default defineComponent({
       phone: '',
       toast: {
         visible: false,
-        timeout: 4000,
+        timeout: 6000,
         position: 'top',
         message: '',
         color: '',
@@ -127,10 +128,15 @@ export default defineComponent({
           <p>${this.formData.problem}</p>
         `;
 
-        await axios.post('http://localhost:1337/api/email', {
-          to: this.email,
+        await axios.post(`${environment.strapiUrl}/api/email/`, {
+          to: environment.email || 'A1308267@ya.ru',
           subject: 'Новая заявка с сайта',
+          text: 'Новая заявка с сайта',
           html: emailContent,
+        }, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
         });
 
         this.toast = {
@@ -145,7 +151,7 @@ export default defineComponent({
         console.error('Error sending email:', error);
         this.toast = {
           visible: true,
-          message: 'Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже.',
+          message: 'Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже. Вы можете попробовать отправить заявку по телефону или на почту.',
           color: 'red',
         };
       }

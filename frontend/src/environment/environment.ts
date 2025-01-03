@@ -1,7 +1,5 @@
-
-
 export const environment = {
-    apiUrl: 'https://default-api-url.com',
-    strapiUrl: 'http://localhost:1337/',
+    email: 'copydef@copydef.ru',
+    strapiUrl: 'https://admin.copydef.ru',
   };
   

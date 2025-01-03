@@ -7,13 +7,13 @@ services:
     ports:
       - '1337:1337'
     volumes:
-      - strapi_data:/app/.tmp
-      - ./backend/public/uploads:/var/www/uploads
+      - strapi_data:/app/.tmp # Для временных данных страпи
+      - strapi_uploads:/app/public/uploads # Для загрузок
     depends_on:
       - postgres
     networks:
       - app-network
-# секрет СЕКРЕТ
+
   frontend:
     image: aeroserg/frontend:latest
     container_name: frontend
@@ -37,8 +37,9 @@ services:
       - app-network
 
 volumes:
-  strapi_data:
-  postgres_data:
+  strapi_data: # Для временных файлов Strapi
+  strapi_uploads: # Для хранения загруженных файлов
+  postgres_data: # Для данных PostgreSQL
 
 networks:
   app-network:

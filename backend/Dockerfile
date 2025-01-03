@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 1337
 
 # Start Strapi
-CMD ["npm", "run", "develop"]
+CMD ["npm", "run", "start"]

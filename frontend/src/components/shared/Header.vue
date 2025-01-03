@@ -84,7 +84,7 @@ export default defineComponent({
     };
 
     const scrollToForm = () => {
-      const form = document.getElementById("contatcs");
+      const form = document.getElementById("contact");
       if (form) {
         form.scrollIntoView({ behavior: "smooth", block: "center" });
         
@@ -94,7 +94,7 @@ export default defineComponent({
     const headerStyles = computed(() => {
       return isSmallScreen.value
         ? "background-color: white; color: #010138; padding: 0 5px; width: 100%; position: fixed; top: 0; left: 0; z-index: 1000; box-shadow: 0 2px 0px rgba(0, 0, 0, 0.6);"
-        : "background-color: white; color: #010138; margin: 20px 5% 0 5%; padding: 10px 20px; border-radius: 18px; box-shadow: 0 2px 0px rgba(0, 0, 0, 0.6); width: 90%;";
+        : "background-color: white; color: #010138; margin: 20px 5% 0 5%;position: fixed; padding: 10px 20px; border-radius: 18px; box-shadow: 0 2px 0px rgba(0, 0, 0, 0.6); width: 90%;";
     });
 
     const contactButtonStyles = computed(() => {

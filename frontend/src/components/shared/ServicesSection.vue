@@ -79,7 +79,7 @@ export default defineComponent({
           briefDescription: card.brief_description?.toUpperCase() || "NO DESCRIPTION AVAILABLE",
           fullDescription: card.full_description || "No detailed description available",
           photo: card.service_photo?.url
-            ? `http://localhost:1337${card.service_photo.url}`
+            ? `http://admin.copydef.ru${card.service_photo.url}`
             : null,
         }));
       }

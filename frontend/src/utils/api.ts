@@ -2,7 +2,7 @@ import axios from 'axios';
 import { environment } from '../environment/environment';
 
 const apiClient = axios.create({
-  baseURL: environment.strapiUrl || 'http://localhost:1337',
+  baseURL: environment.strapiUrl || 'https://admin.copydef.ru',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -56,9 +56,7 @@ export async function fetchData(
 
   const convertedParams = flattenParams(params);
   try {
-    console.log(`convertedParams ${JSON.stringify(convertedParams)}`);
     const response = await apiClient.get(`/api/${endpoint}`, { params: convertedParams });
-    console.log('Fetched response:', response);
     return response.data;
   } catch (error) {
     console.error('Error fetching data:', error);

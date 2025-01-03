@@ -24,7 +24,7 @@ export default defineComponent({
   --color-light-purple: #EDEDFB; /* Light Purple */
   
 }
-.place-bottom {
+.place-bottom img {
   object-position: bottom;
 }
 
@@ -49,7 +49,10 @@ body {
   margin: 0;
   padding: 0;
 }
-
+.card-image img {
+  object-fit: cover!important ;
+  object-position: top;
+}
 /* Add a utility class for Carlito font usage */
 .carlito {
   font-family: 'Carlito', sans-serif;

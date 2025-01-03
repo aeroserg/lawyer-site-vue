@@ -3,12 +3,15 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface CaseCardKartochkaKejsa extends Struct.ComponentSchema {
   collectionName: 'components_case_card_kartochka_kejsa';
   info: {
+    description: '';
     displayName: '\u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0430 \u043A\u0435\u0439\u0441\u0430';
   };
   attributes: {
     article_title: Schema.Attribute.String;
     case_description: Schema.Attribute.Blocks & Schema.Attribute.Required;
     case_number: Schema.Attribute.String;
+    meta_description: Schema.Attribute.Text;
+    meta_title: Schema.Attribute.String;
   };
 }
 

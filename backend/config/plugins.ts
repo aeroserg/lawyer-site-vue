@@ -22,16 +22,18 @@ export default () => ({
     config: {
       provider: 'nodemailer',
       providerOptions: {
-        host: 'smtp.yandex.ru',
+        host: 'smtp.mail.ru',
         port: 465,
+        secure: true,
         auth: {
-          user: 'B1308267@yandex.ru',
-          pass: 'mkgqcwxcyedgpvvy',
+          user: 'copydef@copydef.ru',
+          pass: '2RX6DSzDDknDmauTNjaa',
         },
+        connectionTimeout: 10000,  
       },
       settings: {
-        defaultFrom: 'CopyDef B1308267@yandex.ru',
-        defaultReplyTo: 'B1308267@yandex.ru',
+        defaultFrom: 'Новая заявка с сайта copydef@copydef.ru',
+        defaultReplyTo: 'copydef@copydef.ru',
       },
     },
   },

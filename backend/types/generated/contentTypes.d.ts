@@ -407,6 +407,7 @@ export interface ApiAboutsAbouts extends Struct.CollectionTypeSchema {
 export interface ApiCasesCases extends Struct.CollectionTypeSchema {
   collectionName: 'case';
   info: {
+    description: '';
     displayName: '\u041A\u0435\u0439\u0441\u044B';
     pluralName: 'case';
     singularName: 'cases';
