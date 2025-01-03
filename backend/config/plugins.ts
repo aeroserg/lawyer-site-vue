@@ -27,7 +27,7 @@ export default () => ({
         secure: true,
         auth: {
           user: 'copydef@copydef.ru',
-          pass: '2RX6DSzDDknDmauTNjaa',
+          pass: process.env.EMAIL_PASSWORD,
         },
         connectionTimeout: 10000,  
       },
